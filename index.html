@@ -1,0 +1,79 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#f7f4fb">
+  <meta name="description" content="Unjudged is a welcoming space to talk through difficult feelings without shame.">
+  <title>Unjudged — You can say it here.</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="app-shell">
+    <aside class="sidebar" id="sidebar">
+      <a class="brand" href="#" aria-label="Unjudged home">
+        <span class="brand-mark" aria-hidden="true"><svg viewBox="0 0 40 40"><path d="M20 31S6.5 23.1 6.5 14.9a7.4 7.4 0 0 1 13.5-4.2 7.4 7.4 0 0 1 13.5 4.2C33.5 23.1 20 31 20 31Z"/><path d="M12 20h5l2.1-4.2 3.1 8.1 2.1-4H29"/></svg></span>
+        <span class="brand-name">unjudged<span class="brand-dot">.</span></span>
+      </a>
+      <button class="new-chat" id="newChat"><span>＋</span> New conversation</button>
+      <div class="sidebar-note">
+        <span class="tiny-spark">✳</span>
+        <p>A little space to be honest, at your own pace.</p>
+      </div>
+      <div class="sidebar-bottom">
+        <div class="privacy-mini"><span class="lock-icon">♧</span><div><strong>Your space, your pace</strong><small>Demo mode · no account needed</small></div></div>
+        <button class="text-button" id="aboutButton">About Unjudged</button>
+      </div>
+    </aside>
+
+    <main class="main-panel">
+      <header class="topbar">
+        <button class="mobile-menu" id="mobileMenu" aria-label="Open menu">☰</button>
+        <div class="topbar-title"><span class="status-dot"></span> A space to talk</div>
+        <button class="clear-button" id="clearChat" title="Clear this conversation">Clear chat</button>
+      </header>
+
+      <section class="chat-area" aria-live="polite" aria-label="Conversation">
+        <div class="welcome" id="welcome">
+          <div class="welcome-symbol"><span>♡</span><i></i></div>
+          <p class="eyebrow">WELCOME TO UNJUDGED</p>
+          <h1>You can say it <em>here.</em></h1>
+          <p class="welcome-copy">You don't have to have the right words. Start wherever you are. I'm here to listen and help you sort through what's on your mind.</p>
+          <div class="prompt-grid">
+            <button class="prompt-card" data-prompt="I've been feeling lonely lately."><span class="prompt-icon lavender">☁</span><span><strong>I've been feeling lonely</strong><small>When things feel heavy</small></span><b>↗</b></button>
+            <button class="prompt-card" data-prompt="I'm dealing with something in a relationship."><span class="prompt-icon peach">♡</span><span><strong>Something in my relationship</strong><small>Love, trust, or uncertainty</small></span><b>↗</b></button>
+            <button class="prompt-card" data-prompt="There's something I'm ashamed to say."><span class="prompt-icon blue">✳</span><span><strong>Something I'm afraid to say</strong><small>No need to rush</small></span><b>↗</b></button>
+            <button class="prompt-card" data-prompt="I don't need advice right now. I just need to talk."><span class="prompt-icon green">☾</span><span><strong>I just need to let it out</strong><small>No advice, just space</small></span><b>↗</b></button>
+          </div>
+        </div>
+        <div class="messages" id="messages"></div>
+      </section>
+
+      <section class="composer-wrap">
+        <form class="composer" id="chatForm">
+          <textarea id="messageInput" rows="1" maxlength="3000" placeholder="What's on your mind?" aria-label="Your message"></textarea>
+          <div class="composer-bottom">
+            <span class="composer-hint"><span>↵</span> Enter to send · Shift + Enter for a new line</span>
+            <button class="send-button" type="submit" id="sendButton" aria-label="Send message"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 19V5M6 11l6-6 6 6"/></svg></button>
+          </div>
+        </form>
+        <p class="disclaimer">Unjudged is an AI support tool, not a therapist or emergency service. <button id="privacyButton">Privacy & safety</button></p>
+      </section>
+    </main>
+  </div>
+
+  <div class="modal-backdrop" id="modalBackdrop" hidden>
+    <section class="modal" role="dialog" aria-modal="true" aria-labelledby="modalTitle">
+      <button class="modal-close" id="modalClose" aria-label="Close">×</button>
+      <div class="modal-icon">♡</div>
+      <h2 id="modalTitle">A note about Unjudged</h2>
+      <div id="modalContent"></div>
+      <button class="modal-ok" id="modalOk">I understand</button>
+    </section>
+  </div>
+  <script src="app.js"></script>
+</body>
+</html>
